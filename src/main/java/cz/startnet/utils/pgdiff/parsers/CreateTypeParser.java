@@ -51,6 +51,9 @@ public class CreateTypeParser {
         if (parser.expectOptional("ENUM")) {
             type.setIsEnum(true);
         }
+        
+        parser.expectOptional("RANGE");
+
         parser.expect("(");
         while (!parser.expectOptional(")")) {
             if (type.getIsEnum()) {
